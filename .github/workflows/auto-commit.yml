@@ -20,5 +20,6 @@ jobs:
         run: |
           date > last-updated.txt
           git add last-updated.txt
-          git commit -m "Automated commit - $(date)"
+          git diff --cached --quiet || git commit -m "Automated commit - $(date)"
           git push
+
